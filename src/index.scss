@@ -1,0 +1,30 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+
+// --- TODO ---
+.todo__sidebar {
+  background-color: #f4f6f8;
+  width: 200px;
+  height: 100vh;
+  border-right: 1px solid #F1F1F1;
+  padding: 60px 30px 30px 30px;
+}
+
+.todo__sidebar-title {
+  margin-bottom: 40px;
+}
