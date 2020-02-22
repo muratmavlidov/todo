@@ -19,12 +19,30 @@ ul {
 // --- TODO ---
 .todo__sidebar {
   background-color: #f4f6f8;
-  width: 200px;
+  width: 230px;
   height: 100vh;
   border-right: 1px solid #F1F1F1;
-  padding: 60px 30px 30px 30px;
+  padding: 60px 40px 30px 15px;
 }
 
 .todo__sidebar-title {
   margin-bottom: 40px;
+}
+
+// shared
+
+.field {
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 17px;
+  letter-spacing: 0.15px;
+  color: black;
+  padding: 7px 11px;
+
+  &:focus {
+    outline: none;
+  }
 }

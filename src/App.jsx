@@ -1,7 +1,12 @@
 import React from 'react';
-import MenuList from './components/menu-list';
+import { 
+  MenuList, 
+  AddCategory 
+} from './components';
 
 import menuSvg from './assets/img/menu.svg';
+
+import DB from './assets/db.json';
 
 function App() {
   return (
@@ -21,7 +26,10 @@ function App() {
             { color: 'blue', name: 'Фронтенд' },
             { color: 'pink', name: 'Фильмы и сериалы' }
           ]}
+          isRemovable
         />
+
+        <AddCategory colors={DB.colors} />
       </aside>
 
       <div className="todo__tasks">

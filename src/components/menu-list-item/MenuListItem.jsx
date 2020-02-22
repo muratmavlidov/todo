@@ -1,8 +1,9 @@
 import React from 'react';
+import { Badge } from '../';
 
 import './index.scss';
 
-const MenuListItem = ({ icon, name, color, active }) => {
+const MenuListItem = ({ icon, name, color, active, isRemovable }) => {
 
   const activeClass = active ? 'active' : '';
 
@@ -11,9 +12,11 @@ const MenuListItem = ({ icon, name, color, active }) => {
 
       {icon && (<i><img src={ icon } alt="menu"/></i>)}
 
-      {!icon && (
-        <span className={`badge badge--${color}`}></span>
-      )}
+      <div className="todo__list-itemBadge">
+        {!icon && (
+          <Badge color={color} />
+        )}
+      </div>
 
       <span>{ name }</span>
     </li>

@@ -1,16 +1,16 @@
 import React from 'react';
-import MenuListItem from '../menu-list-item';
+import {MenuListItem} from '../';
 
 
 import './index.scss';
 
-const MenuList = ({ items }) => {
+const MenuList = ({ items, isRemovable }) => {
   return (
     <ul className="menu__list">
       {
-        items.map((props) => {
+        items.map((props, index) => {
           return (
-            <MenuListItem {...props} />
+            <MenuListItem {...props} isRemovable={isRemovable} key={index} />
           )
         })
       }
