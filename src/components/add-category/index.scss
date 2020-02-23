@@ -1,5 +1,6 @@
 .todo__sidebarAdded {
   position: relative;
+  user-select: none;
 }
 
 .todo__sidebarAddedBtn {
@@ -57,6 +58,23 @@
   }
 }
 
+
+.addedPopup__colors {
+  display: flex;
+
+  li {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+.addedPopup__colors {
+  margin-top: 15px;
+  margin-left: 3px;
+}
+
 .addedPopup {
   position: absolute;
   height: 148px;
@@ -66,6 +84,7 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
   padding: 15px;
+  animation: showedPopup .2s ease-in-out;
 
   .field {
     width: 200px;
@@ -99,18 +118,14 @@
   }
 }
 
-.addedPopup__colors {
-  display: flex;
-
-  li {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    cursor: pointer;
+@keyframes showedPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-}
 
-.addedPopup__colors {
-  margin-top: 15px;
-  margin-left: 3px;
+  100% {
+    opacity: 1;
+    display: block;
+  }
 }

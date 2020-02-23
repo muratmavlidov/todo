@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   MenuList, 
   AddCategory 
 } from './components';
 
 import menuSvg from './assets/img/menu.svg';
-
 import DB from './assets/db.json';
 
 function App() {
+
+  const [lists, setLists] = useState(
+    DB.lists.map(item => {
+      item.color = DB.colors.find(({id}) => id === item.colorId).name
+      return item
+    })
+  );
+
+  const onAddListItem = (newListItem) => {
+    if (!newListItem.name) return;
+    const newList = [...lists, newListItem];
+    setLists(newList);
+  }
+
   return (
     <div className="todo">
 
@@ -20,16 +33,9 @@ function App() {
             ]}
           />
         </div>
-        <MenuList 
-          items={[
-            { color: 'green', name: 'Покупки' },
-            { color: 'blue', name: 'Фронтенд' },
-            { color: 'pink', name: 'Фильмы и сериалы' }
-          ]}
-          isRemovable
-        />
-
-        <AddCategory colors={DB.colors} />
+        
+        <MenuList items={lists} isRemovable />
+        <AddCategory colors={DB.colors} onAddListItem={onAddListItem} />
       </aside>
 
       <div className="todo__tasks">

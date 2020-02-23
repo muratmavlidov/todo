@@ -2,15 +2,10 @@ import React from 'react';
 
 import './index.scss';
 
-const Badge = ({ color, hex, clazz, onClick }) => {
-
-  const styles = {
-    backgroundColor: hex || ''
-  }
+const Badge = ({ color, clazz, onClick }) => {
 
   return(
     <span onClick={onClick} 
-          style={styles} 
           className={`badge badge--${color} ${clazz}`}>
     </span>
   );
